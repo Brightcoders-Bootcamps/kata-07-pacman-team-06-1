@@ -36,7 +36,6 @@ score_text = Text.new(
 )
 
 update do
-	puts @pacman.x
 	if (@pacman.x + @x_speed).between?(500, 580)
 		@pacman.x = @pacman.x
 	else
