@@ -36,6 +36,7 @@ score_text = Text.new(
 )
 
 update do
+	puts @pacman.x
 	if (@pacman.x + @x_speed).between?(500, 580)
 		@pacman.x = @pacman.x
 	else
@@ -51,11 +52,7 @@ update do
 
 end
 
-set title: 'Pacman',
-    background: 'black',
-    width: 640,
-    height: 480,
-    resizable: false
+
 
 #paredes inicio
 Square.new(

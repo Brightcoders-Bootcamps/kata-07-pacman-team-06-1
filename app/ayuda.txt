@@ -1,0 +1,32 @@
+- Pacman - Circulo
+- Frutas - circulo mas pequeño
+- Fantasmas - Circulos o cuadrados pequeños
+
+- Muros  - cuadrados y lineas       
+- Mundo, tiene x,y 
+
+Clase:
+
+
+Personaje.new("Pacman", 50, 50, 10, "yellow")
+Personaje.new("Fruta", x, y, 3, "orange")
+Personaje.new("Fantasma", x, y, 8, "green")
+Personaje.new("Fantasma", x, y, 8, "blue")
+Personaje.new("Fantasma", x, y, 8, "red")
+Personaje.new("Fantasma", x, y, 8, "pink")
+
+
+
+
+Clase padre para: Pacman, Frutas, y Fantasmas
+Similitudes:
+- Todos tienen x, y.
+- Todos tienen un radio.
+- Todos tienen colores.
+
+Rasgos diferenciados:
+- Pacman y fantasmas tienen velocidad.
+- Pacman se mueve según como el usuario desee.
+- Pacman maneja metodos para colisiones
+
+
