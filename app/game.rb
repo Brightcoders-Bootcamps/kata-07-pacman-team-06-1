@@ -34,7 +34,7 @@ class Game
         @window.update_window do 
             @pacman.move_x(keyboard_listener.x_speed)
             @pacman.move_y(keyboard_listener.y_speed)
-            @pacman.check_colision
+            #@pacman.check_colision
         end
     end
 end
