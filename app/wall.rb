@@ -6,9 +6,9 @@ class Wall
         @y1_position = y
      
 
-        @wall2d = Square.new(x: x, y: y,size: 30,color: 'blue',z: 10)
+        @wall2d = Square.new(x: x, y: y,size: 70,color: 'blue',z: 10)
     end    
-    
+
     # eliminar
     def remove
         @wall2d.remove

@@ -27,7 +27,8 @@ class ShapesFactory
         def create_phantom
         end
     
-        def create_wall
+        def create_wall(x, y)
+            Wall.new(x, y)
         end
     
         def create_fruit(x, y)
