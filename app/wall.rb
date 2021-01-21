@@ -4,9 +4,8 @@ class Wall
     def initialize(x, y)
         @x1_position = x
         @y1_position = y
-     
 
-        @wall2d = Square.new(x: x, y: y,size: 70,color: 'blue',z: 10)
+        @wall2d = Square.new(x: x, y: y,size: 70,color: 'blue', z: 10)
     end    
 
     # eliminar

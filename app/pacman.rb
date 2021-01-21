@@ -3,8 +3,8 @@ class Pacman
   def initialize(x, y)
       @x_speed = 0
       @y_speed = 0
-      @x = x
-      @y = y
+      @x = x 
+      @y = y 
       @pacman = Circle.new( x: x , y: y, radius: 15, sectors: 32, color: 'yellow', z: 10 )
   end
   
