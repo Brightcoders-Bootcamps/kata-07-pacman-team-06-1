@@ -5,15 +5,15 @@ require 'ruby2d'
 require 'rspec'
 
 RSpec.describe Pacman do
-	before do 
-		@pacman = Pacman.new(30,30) 
-	end
+  before do
+    @pacman = Pacman.new(30, 30)
+  end
 
-	describe '.instance of pacman' do
-		it 'check if @pacman varibale is an instance of Pacman' do
-			expect(@pacman).to be_an_instance_of(Pacman)
-		end
-	end
+  describe '.instance of pacman' do
+    it 'check if @pacman varibale is an instance of Pacman' do
+      expect(@pacman).to be_an_instance_of(Pacman)
+    end
+  end
 
   describe '.move_x' do
     it 'plus or minus one to x_position' do
@@ -29,7 +29,7 @@ RSpec.describe Pacman do
 
   describe '.get_coordinates' do
     it 'returns x and y coordinates' do
-      expect(@pacman.get_coordinates).to eq [30,30]
+      expect(@pacman.get_coordinates).to eq [30, 30]
     end
   end
 end
