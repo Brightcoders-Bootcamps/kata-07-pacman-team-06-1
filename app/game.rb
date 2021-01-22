@@ -3,6 +3,7 @@
 require 'ruby2d'
 require_relative './window'
 require_relative '../helper/keyboard_detect'
+require_relative '../helper/text2d'
 require_relative 'shapes_factory'
 
 # Main class that manage the entire game
@@ -13,6 +14,7 @@ class Game
     @pacman = ShapesFactory.create_shape('pacman', 300, 300)
     draw_fruits
     draw_wall
+    add_score
     animate_game
     draw_limits
     @window.window.show
@@ -45,21 +47,20 @@ class Game
   def animate_game
     keyboard_listener = KeyboardListener.new(@window.window)
     @window.update_window do
-      @pacman.move_x(keyboard_listener.x_speed)
-      @pacman.move_y(keyboard_listener.y_speed)
-      # @pacman.check_colision
+      @pacman.move_x(keyboard_listener.x_speed, @objects, @score_text)
+      @pacman.move_y(keyboard_listener.y_speed, @objects, @score_text)
     end
   end
 
   def add_score
-    @score_text = Text.new('%03d' % score, x: 530, y: 10, color: 'white', size: 20, opacity: 1)
+    @score_text = Text2d.new(530, 10, 0)
   end
 
   def draw_limits
-    @objects << Line.new(x1: 0, y1: 50, x2: 0, y2: 480, width: 10, color: 'white', z: 20) # left limit
-    @objects << Line.new(x1: 0, y1: 50, x2: 645, y2: 50, width: 5, color: 'white', z: 20) # top limit
-    @objects << Line.new(x1: 645, y1: 50, x2: 645, y2: 500, width: 10, color: 'white', z: 20) # rigth limit
-    @objects << Line.new(x1: 0, y1: 470, x2: 645, y2: 470, width: 10, color: 'white', z: 20) # bottom limit
+  #  @objects << Line.new(x1: 0, y1: 50, x2: 0, y2: 480, width: 10, color: 'white', z: 20) # left limit
+  #  @objects << Line.new(x1: 0, y1: 50, x2: 645, y2: 50, width: 5, color: 'white', z: 20) # top limit
+  #  @objects << Line.new(x1: 645, y1: 50, x2: 645, y2: 500, width: 10, color: 'white', z: 20) # rigth limit
+  #  @objects << Line.new(x1: 0, y1: 470, x2: 645, y2: 470, width: 10, color: 'white', z: 20) # bottom limit
   end
 end
 
