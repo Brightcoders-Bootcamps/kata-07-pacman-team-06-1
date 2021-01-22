@@ -2,15 +2,16 @@
 
 # Class that describe the fruit object
 class Fruit
-  attr_reader :x, :y, :fruit
-
-  def initialize(x_position, y_position)
-    @x_position = x_position
-    @y_position = y_position
-    @fruit = Circle.new(x: @x_position, y: @y_position, radius: 4, color: 'orange', z: 1)
+  attr_reader :x, :y, :fruit, :radius
+  def initialize(x, y)
+      @x = x
+      @y = y
+      @fruit = Circle.new( x: x , y: y, radius: 4, color: 'orange', z: 1 )
+      @radius = @fruit.radius
   end
 
   def get_coordinates
-    [x, y]
+      return [self.x, self.y]
   end
+
 end
