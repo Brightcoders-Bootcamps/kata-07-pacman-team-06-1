@@ -49,7 +49,6 @@ class Pacman
 
   # this method remove fruit when pacman touch it
   def eat_fruit(fruit, array_objects, score_text)
-    puts fruit.inspect
     fruit.fruit.remove
     array_objects.delete(fruit)
     score_text.add_score(1)
@@ -111,6 +110,6 @@ class Pacman
 
   def intersect_border?
     return true if @pacman.x < 20 || @pacman.x > 624
-    return true if @pacman.y < 65 || @pacman.y > 450
+    return true if @pacman.y < 68 || @pacman.y > 450
   end
 end
