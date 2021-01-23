@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ruby Critic - Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- StyleSheets -->
+    <link href="assets/stylesheets/bootstrap.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="assets/stylesheets/font-awesome.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="assets/stylesheets/prettify.custom_theme.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="assets/stylesheets/application.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <header class="navbar navbar-default navbar-fixed-top">
+      <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <a href="overview.html"><img src="assets/images/logo.png" alt="Ruby Critic Logo" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
+      
+    </header>
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <aside id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a href="overview.html" class="project-nav-item overview-nav"><i class="fa fa-dashboard"></i>Overview</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="code_index.html" class="project-nav-item code-index-nav"><i class="fa fa-code"></i>Code</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="smells_index.html" class="project-nav-item smells-index-nav"><i class="fa fa-warning"></i>Smells</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="simple_cov_index.html" class="project-nav-item coverage-index-nav"><i class="fa fa-umbrella"></i>Coverage</a>
+          </li>
+        </ul>
+      </aside>
+      <!-- /#sidebar-wrapper -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+  <!--Page Title -->
+  <div class="Page_Title">
+    <div class="file-time">
+      <span class="committed-at">
+        
+          Never committed
+        
+      </span>
+    </div>
+    <div>
+      <h3><small>. /</small> pacman.rb</h3>
+    </div>
+  </div>
+  <!--End Page Title -->
+  <div class="Content_Wrapper">
+    <!-- code detail -->
+    <div class="code-top-detail clearfix row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-1">
+            <div class="rating c big">
+              C
+            </div>
+          </div>
+          <div class="code-statistics col-md-11">
+            <div class="col-md-3">
+              <div><span class="metric">118</span><small> lines of codes</small></div>
+              <div><span class="metric">14</span><small> methods</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric">9.2</span><small> complexity/method</small></div>
+              <div><span class="metric">0</span><small> churn</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric">128.12</span><small> complexity</small></div>
+              <div><span class="metric">0</span><small> duplications</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="code-tabs">
+          <ul class="nav nav-pills right-to-left">
+            <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
+            <li class="active">
+              <a href="#" id="toggle-smells" class="toggle-button button">
+                28
+                smells
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <code class="prettyprint linenums lang-ruby file-code js-file-code"># frozen_string_literal: true
+
+# This class is for pacman object
+class Pacman<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Instance-Variables.md" target="_blank"><b>TooManyInstanceVariables</b></a>        </span>      </div>      <span>Pacman has at least 7 instance variables</span>          </div>  </li></ol>
+  attr_accessor :x, :y<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Attribute.md" target="_blank"><b>Attribute</b></a>        </span>      </div>      <span>Pacman#x is a writable attribute</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Attribute.md" target="_blank"><b>Attribute</b></a>        </span>      </div>      <span>Pacman#y is a writable attribute</span>          </div>  </li></ol>
+
+  def initialize(coor_x, coor_y)
+    @x_speed = 0
+    @y_speed = 0
+    @x = coor_x<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>Pacman has the variable name '@x'</span>          </div>  </li></ol>
+    @y = coor_y<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>Pacman has the variable name '@y'</span>          </div>  </li></ol>
+    @prev_x = 0
+    @prev_y = 0
+    @pacman = Circle.new(x: @x, y: @y, radius: 15, sectors: 32, color: &#39;yellow&#39;, z: 10)
+  end
+
+  # move pacman on x axis and check if it is collisioned with other objects
+  # @prev_x is for save previuos coordinates of the pacman, is used on collision_by_wall
+  def move_x(coord_x, array_objects, score_text)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Data-Clump.md" target="_blank"><b>DataClump</b></a>        </span>      </div>      <span>Pacman takes parameters ['array_objects', 'score_text'] to 5 methods</span>              <span>Locations:</span>                  <a href="pacman.html#L19" class="js-smell-location">0</a>                  <a href="pacman.html#L27" class="js-smell-location">1</a>                  <a href="pacman.html#L36" class="js-smell-location">2</a>                  <a href="pacman.html#L44" class="js-smell-location">3</a>                  <a href="pacman.html#L53" class="js-smell-location">4</a>                  </div>  </li></ol>
+    @prev_x = @pacman.x<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#move_x calls '@pacman.x' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L20" class="js-smell-location">0</a>                  <a href="pacman.html#L21" class="js-smell-location">1</a>                  </div>  </li></ol>
+    @pacman.x += (coord_x + @x_speed)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#move_x calls '@pacman.x' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L20" class="js-smell-location">0</a>                  <a href="pacman.html#L21" class="js-smell-location">1</a>                  </div>  </li></ol>
+    check_colision(array_objects, score_text)
+  end
+
+  # move pacman on x axis and check if it is collisioned with other objects
+  # @prev_y is for save previuos coordinates of the pacman, is used on collision_by_wall
+  def move_y(coord_y, array_objects, score_text)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Data-Clump.md" target="_blank"><b>DataClump</b></a>        </span>      </div>      <span>Pacman takes parameters ['array_objects', 'score_text'] to 5 methods</span>              <span>Locations:</span>                  <a href="pacman.html#L19" class="js-smell-location">0</a>                  <a href="pacman.html#L27" class="js-smell-location">1</a>                  <a href="pacman.html#L36" class="js-smell-location">2</a>                  <a href="pacman.html#L44" class="js-smell-location">3</a>                  <a href="pacman.html#L53" class="js-smell-location">4</a>                  </div>  </li></ol>
+    @prev_y = @pacman.y<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#move_y calls '@pacman.y' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L28" class="js-smell-location">0</a>                  <a href="pacman.html#L29" class="js-smell-location">1</a>                  </div>  </li></ol>
+    @pacman.y += (coord_y + @y_speed)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#move_y calls '@pacman.y' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L28" class="js-smell-location">0</a>                  <a href="pacman.html#L29" class="js-smell-location">1</a>                  </div>  </li></ol>
+    check_colision(array_objects, score_text)
+  end
+
+  private
+
+  # this private method is called when pacman are moving on the world
+  def check_colision(array_objects, score_text)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Data-Clump.md" target="_blank"><b>DataClump</b></a>        </span>      </div>      <span>Pacman takes parameters ['array_objects', 'score_text'] to 5 methods</span>              <span>Locations:</span>                  <a href="pacman.html#L19" class="js-smell-location">0</a>                  <a href="pacman.html#L27" class="js-smell-location">1</a>                  <a href="pacman.html#L36" class="js-smell-location">2</a>                  <a href="pacman.html#L44" class="js-smell-location">3</a>                  <a href="pacman.html#L53" class="js-smell-location">4</a>                  </div>  </li></ol>
+    array_objects.each do |object|
+      eat_or_stop(object, array_objects, score_text) if intersect_square?(object) || intersect_circle?(object)
+    end
+    stop_pacman if intersect_border?
+  end
+
+  # this method call eat_fruit and collision_by_wall, depending on the object
+  def eat_or_stop(obj, array_objects, score_text)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Data-Clump.md" target="_blank"><b>DataClump</b></a>        </span>      </div>      <span>Pacman takes parameters ['array_objects', 'score_text'] to 5 methods</span>              <span>Locations:</span>                  <a href="pacman.html#L19" class="js-smell-location">0</a>                  <a href="pacman.html#L27" class="js-smell-location">1</a>                  <a href="pacman.html#L36" class="js-smell-location">2</a>                  <a href="pacman.html#L44" class="js-smell-location">3</a>                  <a href="pacman.html#L53" class="js-smell-location">4</a>                  </div>  </li></ol>
+    if obj.instance_of?(Wall)
+      stop_pacman
+    elsif obj.instance_of?(Fruit)
+      eat_fruit(obj, array_objects, score_text)
+    end
+  end
+
+  # this method remove fruit when pacman touch it
+  def eat_fruit(fruit, array_objects, score_text)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Data-Clump.md" target="_blank"><b>DataClump</b></a>        </span>      </div>      <span>Pacman takes parameters ['array_objects', 'score_text'] to 5 methods</span>              <span>Locations:</span>                  <a href="pacman.html#L19" class="js-smell-location">0</a>                  <a href="pacman.html#L27" class="js-smell-location">1</a>                  <a href="pacman.html#L36" class="js-smell-location">2</a>                  <a href="pacman.html#L44" class="js-smell-location">3</a>                  <a href="pacman.html#L53" class="js-smell-location">4</a>                  </div>  </li></ol>
+    puts fruit.inspect<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#eat_fruit refers to 'fruit' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L54" class="js-smell-location">0</a>                  <a href="pacman.html#L55" class="js-smell-location">1</a>                  </div>  </li></ol>
+    fruit.fruit.remove<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#eat_fruit refers to 'fruit' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L54" class="js-smell-location">0</a>                  <a href="pacman.html#L55" class="js-smell-location">1</a>                  </div>  </li></ol>
+    array_objects.delete(fruit)
+    score_text.add_score(1)
+  end
+
+  # this method stop pacman when it collisioned on walls
+  def stop_pacman
+    @pacman.x = @prev_x
+    @pacman.y = @prev_y
+  end
+
+  # simple solutions for calculate when circle(pacman) collisioned on wall(square)
+  def intersect_square?(square)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>Pacman#intersect_square? has approx 6 statements</span>          </div>  </li></ol>
+    return false if square.instance_of?(Fruit)
+
+    square_size = calculate_square_size(square)
+    distance = calculate_distance(square, square_size)
+    check_sides = check_sides_collision(distance, square_size)
+
+    return check_sides unless check_sides.nil?<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Nil-Check.md" target="_blank"><b>NilCheck</b></a>        </span>      </div>      <span>Pacman#intersect_square? performs a nil-check</span>          </div>  </li></ol>
+
+    square_area(distance, square_size) &lt;= (@pacman.radius * @pacman.radius)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#intersect_square? calls '@pacman.radius' 2 times</span>          </div>  </li></ol>
+  end
+
+  # check if pacman touch some border of the square
+  def check_sides_collision(distance, square_size)
+    return false if distance[:dist_x] &gt; (square_size[:sw] + @pacman.radius)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#check_sides_collision calls '@pacman.radius' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L82" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#check_sides_collision calls 'distance[:dist_x]' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L83" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#check_sides_collision calls 'square_size[:sw]' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L83" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#check_sides_collision refers to 'distance' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L82" class="js-smell-location">1</a>                  <a href="pacman.html#L83" class="js-smell-location">2</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#check_sides_collision refers to 'square_size' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L82" class="js-smell-location">1</a>                  <a href="pacman.html#L83" class="js-smell-location">2</a>                  </div>  </li></ol>
+    return false if distance[:dist_y] &gt; (square_size[:sh] + @pacman.radius)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#check_sides_collision calls '@pacman.radius' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L82" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#check_sides_collision calls 'distance[:dist_y]' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L82" class="js-smell-location">0</a>                  <a href="pacman.html#L83" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#check_sides_collision calls 'square_size[:sh]' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L82" class="js-smell-location">0</a>                  <a href="pacman.html#L83" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#check_sides_collision refers to 'distance' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L82" class="js-smell-location">1</a>                  <a href="pacman.html#L83" class="js-smell-location">2</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#check_sides_collision refers to 'square_size' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L82" class="js-smell-location">1</a>                  <a href="pacman.html#L83" class="js-smell-location">2</a>                  </div>  </li></ol>
+    return true if distance[:dist_x] &lt;= square_size[:sw] || distance[:dist_y] &lt;= square_size[:sh]<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#check_sides_collision calls 'distance[:dist_x]' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L83" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#check_sides_collision calls 'distance[:dist_y]' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L82" class="js-smell-location">0</a>                  <a href="pacman.html#L83" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#check_sides_collision calls 'square_size[:sh]' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L82" class="js-smell-location">0</a>                  <a href="pacman.html#L83" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#check_sides_collision calls 'square_size[:sw]' 2 times</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L83" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#check_sides_collision refers to 'distance' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L82" class="js-smell-location">1</a>                  <a href="pacman.html#L83" class="js-smell-location">2</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#check_sides_collision refers to 'square_size' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L81" class="js-smell-location">0</a>                  <a href="pacman.html#L82" class="js-smell-location">1</a>                  <a href="pacman.html#L83" class="js-smell-location">2</a>                  </div>  </li></ol>
+  end
+
+  # calculate square width and heigth
+  def calculate_square_size(square)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Utility-Function.md" target="_blank"><b>UtilityFunction</b></a>        </span>      </div>      <span>Pacman#calculate_square_size doesn't depend on instance state (maybe move it to another class?)</span>          </div>  </li></ol>
+    { sw: square.width / 2, sh: square.height / 2 }
+  end
+
+  # determine the distance over pacman and square
+  def calculate_distance(square, square_size)
+    { dist_x: (@pacman.x - (square.x + square_size[:sw])).abs,
+      dist_y: (@pacman.y - (square.y + square_size[:sh])).abs }
+  end
+
+  # determine the square area
+  def square_area(distance, square_size)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Utility-Function.md" target="_blank"><b>UtilityFunction</b></a>        </span>      </div>      <span>Pacman#square_area doesn't depend on instance state (maybe move it to another class?)</span>          </div>  </li></ol>
+    x = (distance[:dist_x] - square_size[:sw])<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>Pacman#square_area has the variable name 'x'</span>          </div>  </li></ol>
+    y = distance[:dist_y] - square_size[:sh]<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>Pacman#square_area has the variable name 'y'</span>          </div>  </li></ol>
+    (x * x + y * y)
+  end
+
+  # simple solutions for calculate when circle(pacman) collisioned on fruit(circle)
+  def intersect_circle?(circle)
+    return false if circle.instance_of?(Wall)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#intersect_circle? refers to 'circle' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L106" class="js-smell-location">0</a>                  <a href="pacman.html#L108" class="js-smell-location">1</a>                  <a href="pacman.html#L109" class="js-smell-location">2</a>                  <a href="pacman.html#L110" class="js-smell-location">3</a>                  </div>  </li></ol>
+
+    x = circle.x - @pacman.x<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#intersect_circle? refers to 'circle' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L106" class="js-smell-location">0</a>                  <a href="pacman.html#L108" class="js-smell-location">1</a>                  <a href="pacman.html#L109" class="js-smell-location">2</a>                  <a href="pacman.html#L110" class="js-smell-location">3</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>Pacman#intersect_circle? has the variable name 'x'</span>          </div>  </li></ol>
+    y = @pacman.y - circle.y<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#intersect_circle? refers to 'circle' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L106" class="js-smell-location">0</a>                  <a href="pacman.html#L108" class="js-smell-location">1</a>                  <a href="pacman.html#L109" class="js-smell-location">2</a>                  <a href="pacman.html#L110" class="js-smell-location">3</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>Pacman#intersect_circle? has the variable name 'y'</span>          </div>  </li></ol>
+    radius = circle.radius + @pacman.radius<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>Pacman#intersect_circle? refers to 'circle' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="pacman.html#L106" class="js-smell-location">0</a>                  <a href="pacman.html#L108" class="js-smell-location">1</a>                  <a href="pacman.html#L109" class="js-smell-location">2</a>                  <a href="pacman.html#L110" class="js-smell-location">3</a>                  </div>  </li></ol>
+    x * x + y * y &lt;= radius * radius
+  end
+
+  def intersect_border?
+    return true if @pacman.x &lt; 20 || @pacman.x &gt; 624<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#intersect_border? calls '@pacman.x' 2 times</span>          </div>  </li></ol>
+    return true if @pacman.y &lt; 65 || @pacman.y &gt; 450<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Pacman#intersect_border? calls '@pacman.y' 2 times</span>          </div>  </li></ol>
+  end
+end
+</code>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src='assets/javascripts/jquery.min.js'></script>
+    <script src='assets/javascripts/jquery.tablesorter.min.js'></script>
+    <script src='assets/javascripts/jquery.scrollTo.min.js'></script>
+    <script src='assets/javascripts/jquery.timeago.js'></script>
+    <script src='assets/javascripts/highcharts.src-4.0.1.js'></script>
+    <script src='assets/javascripts/prettify.js'></script>
+    <script src='assets/javascripts/bootstrap.min.js'></script>
+    <script src='assets/javascripts/application.js'></script>
+    <script src='assets/javascripts/jquery.filtertable.min.js'></script>
+  </body>
+</html>
