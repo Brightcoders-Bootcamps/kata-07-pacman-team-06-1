@@ -30,33 +30,33 @@ class Pacman
     check_colision(array_objects, score_text)
   end
 
-  private
-
   # this private method is called when pacman are moving on the world
   def check_colision(array_objects, score_text)
     array_objects.each do |object|
       eat_or_stop(object, array_objects, score_text) if intersect_square?(object) || intersect_circle?(object)
     end
+    stop_pacman if intersect_border?
   end
 
   # this method call eat_fruit and collision_by_wall, depending on the object
   def eat_or_stop(obj, array_objects, score_text)
-    if obj.instance_of?(Fruit)
+    if obj.instance_of?(Wall)
+      stop_pacman
+    elsif obj.instance_of?(Fruit)
       eat_fruit(obj, array_objects, score_text)
-    elsif obj.instance_of?(Wall)
-      collision_by_wall
     end
   end
 
   # this method remove fruit when pacman touch it
   def eat_fruit(fruit, array_objects, score_text)
+    puts fruit.inspect
     fruit.fruit.remove
     array_objects.delete(fruit)
     score_text.add_score(1)
   end
 
   # this method stop pacman when it collisioned on walls
-  def collision_by_wall
+  def stop_pacman
     @pacman.x = @prev_x
     @pacman.y = @prev_y
   end
@@ -107,5 +107,10 @@ class Pacman
     y = @pacman.y - circle.y
     radius = circle.radius + @pacman.radius
     x * x + y * y <= radius * radius
+  end
+
+  def intersect_border?
+    return true if @pacman.x < 20 || @pacman.x > 624
+    return true if @pacman.y < 65 || @pacman.y > 450
   end
 end
