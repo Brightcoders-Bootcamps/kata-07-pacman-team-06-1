@@ -14,8 +14,6 @@ class ShapesFactory
         create_fruit(x_position, y_position)
       when 'pacman'
         create_pacman(x_position, y_position)
-      when 'phantom'
-        create_phantom(x_position, y_position)
       when 'wall'
         create_wall(x_position, y_position)
       else
