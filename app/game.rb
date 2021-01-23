@@ -21,8 +21,8 @@ class Game
   end
 
   def draw_fruits
-    (75..480).each do |height|
-      (0..640).each do |width|
+    (75..430).each do |height|
+      (0..630).each do |width|
         @objects << ShapesFactory.create_shape('fruit', width, height) if (width % 25).zero? && (height % 25).zero?
       end
     end
@@ -37,6 +37,7 @@ class Game
     end
   end
 
+  
   # Validates the position to create the wall in the right place
   def check_position_to_place_wall(width, height)
     if [65, 290, 515].include?(width) && [140, 340].include?(height)
@@ -57,10 +58,10 @@ class Game
   end
 
   def draw_limits
-  #  @objects << Line.new(x1: 0, y1: 50, x2: 0, y2: 480, width: 10, color: 'white', z: 20) # left limit
-  #  @objects << Line.new(x1: 0, y1: 50, x2: 645, y2: 50, width: 5, color: 'white', z: 20) # top limit
-  #  @objects << Line.new(x1: 645, y1: 50, x2: 645, y2: 500, width: 10, color: 'white', z: 20) # rigth limit
-  #  @objects << Line.new(x1: 0, y1: 470, x2: 645, y2: 470, width: 10, color: 'white', z: 20) # bottom limit
+    Line.new(x1: 0, y1: 50, x2: 0, y2: 470, width: 10, color: 'white', z: 20) # left limit
+    Line.new(x1: 645, y1: 50, x2: 645, y2: 470, width: 10, color: 'white', z: 20) # rigth limit
+    Line.new(x1: 0, y1: 50, x2: 645, y2: 50, width: 5, color: 'white', z: 20) # top limit
+    Line.new(x1: 0, y1: 470, x2: 645, y2: 470, width: 10, color: 'white', z: 20) # bottom limit
   end
 end
 
